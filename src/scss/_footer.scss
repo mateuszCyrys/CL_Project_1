@@ -1,0 +1,104 @@
+
+.footer .circle{
+	width:35px;
+	height:35px;
+	border: #F3CE5E 12px solid;
+	border-radius:35px;
+	margin:0 auto;
+	position:relative;
+	-webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.footer .circle:hover{
+	width:35px;
+	height:35px;
+	border: #F3CE5E 12px solid;
+	-webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+	position:relative;
+}
+.footer {
+	bottom:0;
+	left:0;
+	position:fixed;
+    width: 100%;
+    height: 2em;
+    overflow:hidden;
+    margin:0 auto;
+	-webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+	z-index:999;
+}
+.footer:hover {
+	-webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+	height: 12em;
+}
+.footer .footerContainer{
+	margin-top:5px;
+	width:100%;
+  height:100%;
+  background-image: linear-gradient(135deg, #A64ac999 10%, #17e9e0 100%);
+  position:relative;
+  top:0;
+  left:0;
+}
+.footerContainer::after {
+  content: "";
+  background-image: url('https://images4.alphacoders.com/236/thumb-1920-236784.jpg');
+  
+  background-position: center;
+  background-size: cover;
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  
+  background-repeat: no-repeat;
+}
+.footer .footerCont{
+  position:relative;
+  top:-45px;
+  right:190px;
+	width:150px;
+	height:auto;
+	margin:0 auto;
+}
+.footerCenter{
+	width:500px;
+	float:left;
+  text-align:center;
+
+}
+
+.footer h3{
+  font-family: 'Dancing Script', cursive;
+  text-shadow: 1px 1px 1px #333;
+	font-size: 45px;
+  margin-top:70px;
+  position: absolute;
+  width: 600px;
+  z-index: 1;   
+    letter-spacing: 0.2px;
+    word-spacing: 0.4px;
+    color: rgb(253, 252, 252);
+    font-weight: 700;
+    font-style: normal;
+    font-variant: small-caps;
+    text-transform: none;
+    text-align: center;
+}

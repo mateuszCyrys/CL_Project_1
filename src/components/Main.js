@@ -7,12 +7,12 @@
   class Main extends React.Component{
     render(){
       return(
-        <div>
+        <>
           <Provider store={store}>
             <Quotes/>
             <Picture/>
           </Provider>        
-        </div>
+        </>
       )
     }
   }

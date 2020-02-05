@@ -1,0 +1,212 @@
+
+input[type='checkbox'] {
+  display: none;
+}
+
+.lbl-toggle {
+  
+  display: block;
+  font-weight: bold;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1rem;
+  border: 4px solid #F3CE5E;
+  cursor: pointer;
+  border-radius: 7px;
+  transition: all 1.25s ease-out;
+}
+
+.lbl-toggle:hover {
+  border: 4px solid #FDA8CF;
+}
+
+.lbl-toggle::before {
+  content: ' ';
+  display: inline-block;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid currentColor;
+  vertical-align: middle;
+  margin-right: .7rem;
+  transform: translateY(-2px);
+  transition: transform 1.5s ease-out;
+}
+
+.toggle:checked + .lbl-toggle::before {
+  transform: rotate(90deg) translateX(-3px);
+  
+}
+
+.collapsible-content {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 1.25s ease-in-out;
+}
+
+.toggle:checked + .lbl-toggle + .collapsible-content {
+  max-height: 100%;
+}
+
+
+.collapsible-content .content-inner {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding: .5rem 1rem;
+}
+
+.texts{
+    position: relative; 
+}
+
+.mainPicture{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.dragAndResize1{
+    top: 30px;
+    position: absolute
+}
+
+
+.dragAndResize2{
+    top: 160px;
+    position: absolute;
+}
+
+
+.dragAndResize3{
+    top: 290px;
+    position: absolute;
+}
+
+
+  .initialImage{
+    height: 500px;
+    border-radius: 15px;
+    
+  }
+
+.fontColor{
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+}
+
+label{
+    margin-left:10px;
+}
+
+.div  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 120px;
+  border-radius: 10px;
+  font-weight: lighter;
+  letter-spacing: 2px;
+  transition: 1s box-shadow;
+  box-sizing: border-box;
+}
+
+.div:hover {
+  box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
+}
+
+.div:hover:before, .div:hover:after {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 120px;
+  border: 4px solid #FDA8CF;
+  border-radius: 10px;
+  animation: 1s clockwise infinite;
+}
+
+.div:hover:after {
+  border: 4px solid #F3CE5E;
+  animation: 2s counterclockwise infinite;
+}
+
+@keyframes clockwise {
+  0% {
+    top: -5px;
+    left: 0;
+  }
+  12% {
+    top: -2px;
+    left: 2px;
+  }
+  25% {
+    top: 0;
+    left: 5px;    
+  }
+  37% {
+    top: 2px;
+    left: 2px;
+  }
+  50% {
+    top: 5px;
+    left: 0;    
+  }
+  62% {
+    top: 2px;
+    left: -2px;
+  }
+  75% {
+    top: 0;
+    left: -5px;
+  }
+  87% {
+    top: -2px;
+    left: -2px;
+  }
+  100% {
+    top: -5px;
+    left: 0;    
+  }
+}
+
+@keyframes counterclockwise {
+  0% {
+    top: -5px;
+    right: 0;
+  }
+  12% {
+    top: -2px;
+    right: 2px;
+  }
+  25% {
+    top: 0;
+    right: 5px;    
+  }
+  37% {
+    top: 2px;
+    right: 2px;
+  }
+  50% {
+    top: 5px;
+    right: 0;    
+  }
+  62% {
+    top: 2px;
+    right: -2px;
+  }
+  75% {
+    top: 0;
+    right: -5px;
+  }
+  87% {
+    top: -2px;
+    right: -2px;
+  }
+  100% {
+    top: -5px;
+    right: 0;    
+  }
+}

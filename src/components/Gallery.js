@@ -15,13 +15,18 @@ class Gallery extends React.Component{
 
     render()
     {   
-        return(<div>
-                <div className="gallery">
-                {this.props.photos.map((image,idx) => {return (<div key={idx} className = "clipped-border">
-                <img key={idx} className = "hexagon" alt={image.tags} src={image.largeImageURL} onClick={() =>this.handleClick(idx,image.largeImageURL)}></img>
-                </div>)})}
-            </div>
-            </div>)
+        if (this.props.photos.length < 5){
+            return(<div className="emptyGallery"></div>)
+        }
+        else{
+            return(
+                <ul className="gallery">
+                    {this.props.photos.map((image,idx) => {return (<li key={idx} className = "clidpped-border">
+                    <img key={idx} className = "hexdagon" alt={"random mem"} src={image.url} onClick={() =>this.handleClick(idx,image.url)}></img>
+                    </li>)})}
+                </ul>
+            )
+        }
     }
 }
 

@@ -3,7 +3,9 @@ import QuoteWithPicture from "../components/QuoteWithPicture";
 
 
 const mapState = (state)=>({
-    quote: state.Quote,
+    topText: state.topText,
+    middleText: state.middleText,
+    bottomText: state.bottomText,
     image: state.Image
 })
 
