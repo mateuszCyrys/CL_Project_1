@@ -5,21 +5,62 @@
 	border-radius: 15px;
 	margin-left: 10px;
 	margin-top: 20px;
+	&:hover{
+		border: 4px solid #FDA8CF;
+	}
 }
 
-.editor:hover{
-	border: 4px solid #FDA8CF;
-}
-
-.textStyles{
-    display: flex; 
-    flex-direction: column;
-
-}
-
-
-
-// input color
+input[type='checkbox'] {
+	display: none;
+  }
+  
+  .lbl-toggle {
+	display: block;
+	font-weight: bold;
+	font-family: 'Dancing Script', cursive;
+	font-size: 20px;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 10px;
+	border: 4px solid #F3CE5E;
+	cursor: pointer;
+	border-radius: 7px;
+	transition: all 1.25s ease-out;
+	&:hover {
+	  border: 4px solid #FDA8CF;
+	}
+	&::before {
+	  content: ' ';
+	  display: inline-block;
+	  border-top: 5px solid transparent;
+	  border-bottom: 5px solid transparent;
+	  border-left: 5px solid currentColor;
+	  vertical-align: middle;
+	  margin-right: .7rem;
+	  transform: translateY(-2px);
+	  transition: transform 1.5s ease-out;
+	}
+  
+  }
+  .toggle:checked + .lbl-toggle::before {
+	transform: rotate(90deg) translateX(-3px);
+  }
+  
+  .collapsible-content {
+	max-height: 0px;
+	overflow: hidden;
+	transition: max-height 1.25s ease-in-out;
+  }
+  
+  .toggle:checked + .lbl-toggle + .collapsible-content {
+	max-height: 100%;
+  }
+  
+  .collapsible-content .content-inner {
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+	padding: 10px
+  }
 
 input[type="color"] {
 	-webkit-appearance: none;
@@ -43,55 +84,44 @@ input[type="color"]::-webkit-color-swatch {
   .select {
     position: relative;
     display: flex;
-    width: 9em;
-    height: 2em;
+    width: 135px;
+    height: 33px;
     line-height: 3;
     overflow: hidden;
-    border-radius: 0.9em;
+    border-radius: 15px;
     margin-left: 10px;
-    border: solid  #F3CE5E 3px;
+	border: solid  #F3CE5E 3px;
+	&:hover{
+		border: solid  #FDA8CF 3px;
+	}
+	&::after {
+		content: '\25BC';
+		position: absolute;
+		top: -10px;
+		right: 0;
+		border: 0;
+		padding: 0 10px;
+		cursor: pointer;
+		pointer-events: none;
+		-webkit-transition: .25s all ease;
+		-o-transition: .25s all ease;
+		transition: .25s all ease;
+	}&:hover::after {
+		color:  #FDA8CF;
+	}
   }
   select {
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
     flex: 1;
-    padding: 0 .5em;
+    padding: 0 7px;
     color:black;
     border: 0;
     cursor: pointer;
   }
-
-  .select:hover{
-    border: solid  #FDA8CF 3px;
-  }
  
-  .select::after {
-    content: '\25BC';
-    position: absolute;
-    top: -10px;
-    right: 0;
-    border: 0;
-    padding: 0 1em;
-    cursor: pointer;
-    pointer-events: none;
-    -webkit-transition: .25s all ease;
-    -o-transition: .25s all ease;
-    transition: .25s all ease;
-  }
-  
-  .select:hover::after {
-    color:  #FDA8CF;
-  }
-  
-  select:focus{
-    border:0;
-  }
-
-  // range
-
   input[type=range] {
-	
 	position:relative;
 	-webkit-appearance: none;
 	width: 80%;
@@ -107,8 +137,8 @@ input[type="color"]::-webkit-color-swatch {
 		 position: absolute;
 		 top: -7px;
 		 border-left: 1px solid #2980b9;
-	   }
-			  &:after {
+	   	}
+	   &:after {
 		 content: '';
 		 background: white;
 		 width: 2px;
@@ -136,4 +166,47 @@ input[type="color"]::-webkit-color-swatch {
 	}
   }
   
+  .textStyles {
+    font-family: 'Dancing Script', cursive;
+    display: flex; 
+    flex-direction: column;
+    letter-spacing: 0.2px;
+    word-spacing: 0.4px;
+    font-weight: 700;
+    font-style: normal;
+    color: #000000;
+    text-transform: none;
+    text-align: center;
+        h1{
+            font-size: 29px;
+            margin-bottom: 35px;
+            font-variant: small-caps;
+            text-decoration: underline solid rgb(68, 68, 68);
+        }
+        h2{
+            font-size: 18px;
+            font-variant: small-caps;
+            margin-bottom: 15px;
+            margin-top: 35px;
+        }
+        h3{
+            font-size: 18px;
+            font-variant: small-caps;
+            margin-bottom: 35px;
+            margin-top: 2px;
+        }
+        &.fontColor h3{
+            font-size: 18px;
+            margin-bottom: 5px;
+            margin-top: 2px;
+            font-variant: small-caps;
+        }
+        &.range h3{
+            font-size: 18px;
+            margin-bottom: 5px;
+            margin-top: 30px;
+            font-variant: small-caps;
+        }
+}
+
   

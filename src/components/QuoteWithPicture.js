@@ -15,14 +15,14 @@ class QuoteWithPicture extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      fontSize: [24,24,24],
-      fontColor: ["black","black","black"],
-      fontType: ["Dancing Script","Dancing Script","Dancing Script"],
-      fonts: ["Bangers","Alegreya","Vollkorn","Cairo","Spectral","Arial"],
+      fontSize: [40,40,40],
+      fontColor: ["white","white","white"],
+      fonts: ["Bangers","Alegreya","Vollkorn","Impact","Cairo","Spectral","Arial"],
       background: ["no","no","no"],
       backgroundOptions: ["yes","no"],
       backgroundColor: ["","",""],
-      text: ["TOP","MIDDLE","BOTTOM"]
+      text: ["TOP","MIDDLE","BOTTOM"],
+      aaa: "lllll"
       }
   }
 
@@ -212,13 +212,6 @@ class QuoteWithPicture extends React.Component{
         fakeState[i-1] = a
         return {fontColor :fakeState}
     })};
-    if (e.target.name === "font"){
-       let a = e.target.value
-       this.setState( state =>{
-         let fakeState = [...state.fontType]
-         fakeState[i-1] = a
-         return {fontType :fakeState}
-    })};
     if (e.target.name === "backgroundText"){
       let a = e.target.value
       this.setState( state =>{
@@ -241,6 +234,28 @@ class QuoteWithPicture extends React.Component{
         fakeState[i-1] = a
         return {backgroundColor :fakeState}
     })};
+}
+
+
+classChange = (i,e) => {
+ if (i===1){ 
+  var element1 = document.getElementById("textOne");
+  element1.className = "";
+  element1.classList.add("dragAndResize1","div");
+  element1.classList.add(e.target.value);
+}
+if (i===2){ 
+  var element2 = document.getElementById("textTwo");
+  element2.className = "";
+  element2.classList.add("dragAndResize2","div");
+  element2.classList.add(e.target.value);
+}
+  if (i===3){ var element3 = document.getElementById("textThree");
+  element3.className = "";
+  element3.classList.add("dragAndResize3","div");
+  element3.classList.add(e.target.value);
+  
+}
 }
 
 background = (i) =>{
@@ -273,7 +288,7 @@ editor = (i) => {
   <input  type="range" name="fontSize"  min="5" max="72" onChange={e => this.handleChange(i,e)}></input> 
   <h3>{this.state.fontSize[i-1]} px</h3>
   <div className="select">
-    <select className="dropdown" name="font"  onChange={e => this.handleChange(i,e)}>
+    <select className="dropdown" name="font"  onChange={e => this.classChange(i,e)}>
       <option selected disabled>Font style</option>
       {this.state.fonts.map((e,idx) =>{return <option key={idx} className="icon-large" value={e}>{e}</option>})}
     </select>
@@ -295,7 +310,6 @@ editor = (i) => {
             overflowWrap: "break-word",
             fontSize: this.state.fontSize[0]+'px',
             color: this.state.fontColor[0],
-            fontFamily: this.state.fontType[0],
             backgroundColor:this.state.backgroundColor[0],
          
     }
@@ -304,7 +318,6 @@ editor = (i) => {
           overflowWrap: "break-word",
           fontSize: this.state.fontSize[1]+'px',
           color: this.state.fontColor[1],
-          fontFamily: this.state.fontType[1],
           backgroundColor:this.state.backgroundColor[1],
           
     }
@@ -313,7 +326,6 @@ editor = (i) => {
         overflowWrap: "break-word",
         fontSize: this.state.fontSize[2]+'px',
         color: this.state.fontColor[2],
-        fontFamily: this.state.fontType[2],
         backgroundColor:this.state.backgroundColor[2],
     }
         
@@ -323,15 +335,15 @@ editor = (i) => {
               <div id='savepicture' className="texts">
                 {this.image()}
                 <div className="box-wrap">
-                  <div className="dragAndResize1 div" style={topText} onMouseOver={this.dragAndResize1} dangerouslySetInnerHTML={{ __html: this.props.topText.replace(/(\r\n|\n|\r)/gm, "<br />")}}></div>
-                  <div className="dragAndResize2 div" style={middleText} onMouseOver={this.dragAndResize2} dangerouslySetInnerHTML={{ __html: this.props.middleText.replace(/(\r\n|\n|\r)/gm, "<br />")}}></div>
-                  <div className="dragAndResize3 div" style={bottomText} onMouseOver={this.dragAndResize3} dangerouslySetInnerHTML={{ __html: this.props.bottomText.replace(/(\r\n|\n|\r)/gm, "<br />")}}></div>
+                  <div id = "textOne" className="dragAndResize1 div Impact" style={topText} onMouseOver={this.dragAndResize1} dangerouslySetInnerHTML={{ __html: this.props.topText.replace(/(\r\n|\n|\r)/gm, "<br />")}}></div>
+                  <div id = "textTwo" className="dragAndResize2 div Impact" style={middleText} onMouseOver={this.dragAndResize2} dangerouslySetInnerHTML={{ __html: this.props.middleText.replace(/(\r\n|\n|\r)/gm, "<br />")}}></div>
+                  <div id = "textThree" className="dragAndResize3 div Impact" style={bottomText} onMouseOver={this.dragAndResize3} dangerouslySetInnerHTML={{ __html: this.props.bottomText.replace(/(\r\n|\n|\r)/gm, "<br />")}}></div>
                   </div>             
                </div>  
             </div>
             <div className="wrap-collabsible">
               <input id="collapsible" className="toggle" type="checkbox"></input>
-              <label htmlFor="collapsible" className="lbl-toggle">More Info</label>
+              <label htmlFor="collapsible" className="lbl-toggle">Text Editor</label>
    
               <div className="collapsible-content">
                 <div className=" editor content-inner">

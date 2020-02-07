@@ -2,7 +2,7 @@ import {combineReducers} from "redux"
 import { ADD_TOPTEXT, ADD_IMAGE, ADD_MIDDLETEXT, ADD_BOTTOMTEXT } from "./actions";
 
 
-const topText = (state="initial top text",action)=>{
+const topText = (state="Top text",action)=>{
     if(action.type === ADD_TOPTEXT){
         let temp = action.payload;
         return temp
@@ -10,7 +10,7 @@ const topText = (state="initial top text",action)=>{
     return state;
 }
 
-const middleText = (state="initial middle text",action)=>{
+const middleText = (state="Middle text",action)=>{
     if(action.type === ADD_MIDDLETEXT){
         let temp = action.payload;
         return temp
@@ -18,7 +18,7 @@ const middleText = (state="initial middle text",action)=>{
     return state;
 }
 
-const bottomText = (state="initial bottom text",action)=>{
+const bottomText = (state="Bottom text",action)=>{
     if(action.type === ADD_BOTTOMTEXT){
         let temp = action.payload;
         return temp

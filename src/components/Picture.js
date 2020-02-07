@@ -54,7 +54,7 @@ class Picture extends React.Component{
             })
        }
 
-    savePicture = () =>htmlToImage.toJpeg(document.getElementById('savepicture'), { quality: 0.95 })
+    savePicture = () =>htmlToImage.toJpeg(document.getElementById('savepicture'), { style: {fontFamily: "Bangers"} })
        .then(function (dataUrl) {
          var link = document.createElement('a');
          link.download = 'my-image-name.jpeg';
@@ -63,6 +63,8 @@ class Picture extends React.Component{
        });
 
     render(){
+        
+   
         return(
             <>
             <div className="addImage">

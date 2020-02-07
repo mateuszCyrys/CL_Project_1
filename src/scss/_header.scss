@@ -8,7 +8,23 @@ header {
 	position: relative;
 	overflow: hidden;
     border-radius: 0 0 85% 85% / 30%;
-    background-repeat: no-repeat;
+	background-repeat: no-repeat;
+	&::after{
+		content: "";
+		background-color: blue;
+	}
+	h1 {
+		font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+		font-size: 80px;
+		text-shadow: 2px 2px 2px #000000;
+		margin-bottom: 30px;
+	}
+	h3{
+		font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+		margin-bottom: 30px;
+		font-size: 30px;
+		text-shadow: 2px 2px 2px #000000;
+	}
 }
 
 header .headerOverlay{
@@ -21,20 +37,9 @@ header .headerOverlay{
 
 }
 
-header::after{
-    content: "";
-    background-color: blue;
-}
 
-h1 {
-	font-family: 'Dancing Script', cursive;
-	font-size: 80px;
-	margin-bottom: 30px;
-}
 
-h3, p {
-	font-family: 'Dancing Script', cursive;
-	margin-bottom: 30px;
-}
+
+
 
 
