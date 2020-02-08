@@ -18,7 +18,7 @@ button {
   font-size: inherit;
   font-family: inherit;
   &.button {
-    width: 15rem;
+    width: 235px;
     height: auto;
     margin-right: 12px;
     .circle {
@@ -26,10 +26,10 @@ button {
       position: relative;
       display: block;
       margin: 0;
-      width: 3rem;
-      height: 3rem;
+      width: 50px;
+      height: 50px;
       background: $black;
-      border-radius: 1.625rem;
+      border-radius: 50px;
       .icon {
         transition:all 0.45s cubic-bezier(0.65,0,.076,1);
         position: absolute;
@@ -39,19 +39,19 @@ button {
         background: $white;
         &.arrow {
           transition:all 0.45s cubic-bezier(0.65,0,.076,1);
-          left: 0.625rem;
-          width: 1.125rem;
-          height: 0.125rem;
+          left: 10px;
+          width: 19px;
+          height: 2px;
           background: none;
           &::before {
             position: absolute;
             content: '';
-            top: -0.25rem;
-            right: 0.0625rem;
-            width: 0.625rem;
-            height: 0.625rem;
-            border-top: 0.125rem solid #fff;
-            border-right: 0.125rem solid #fff;
+            bottom: -4px;
+            right: 1px;
+            width: 10px;
+            height: 10px;
+            border-top: 2px solid #fff;
+            border-right: 2px solid #fff;
             transform: rotate(45deg);
           }
         }
@@ -64,8 +64,8 @@ button {
       left: 0;
       right: 0;
       bottom: 0;
-      padding: 0.75rem 0;
-      margin: 0 0 0 2.85rem;
+      padding: 12px 0;
+      margin: 0 0 0 35px;
       color: $black;
       font-weight: 700;
       line-height: 1.6;
@@ -79,7 +79,7 @@ button {
       .icon {
         &.arrow {
         background: $white;
-        transform: translate(1rem, 0);
+        transform: translate(20px, 0);
         }
       }
     }
@@ -89,10 +89,10 @@ button {
   }
 }
 
-#root > div > div.addImage > button:nth-child(2) > span.button-text{
-    margin: 0 0 0 1.85rem;
+#root > div > div.addImage > button:nth-child(1){
+    width: 257px;
 }
 
-#root > div > div.addImage > button:nth-child(1){
-    width: 16rem;
+#root > div > div.addText.box-wrap > div.textButton1 > button > span.button-text{
+  margin: 0 0 0 0;
 }
